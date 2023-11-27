@@ -1,0 +1,21 @@
+
+
+<!--enf of nav-->
+<mat-toolbar class="classColur" style="background-color: #f58220;"> 
+   <button mat-icon-button (click)="sidenav.toggle()" class="classColur" fxHide fxShow.lt-md>   
+     <mat-icon style="color: #ffff;">menu</mat-icon>  
+     
+</button> <span style="color: #ffffff; text-align: center; font-weight: bold;">User Access Review</span></mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="opened">
+    <mat-nav-list>
+      <app-menu-list-item *ngFor="let item of menu" [item]="item"></app-menu-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-breadcrumb></app-breadcrumb>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div>
+
+ 
+
+
+
+  <mat-table #table [dataSource]="dataSource">
+
+   
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="UserFullName">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.UserFullName}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="ManagerFullName">
+      <mat-header-cell *matHeaderCellDef>Manager FullName</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ManagerFullName}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Email}} </mat-cell>
+    </ng-container>
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="Position">
+        <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Position}} </mat-cell>
+      </ng-container>
+<!-- Symbol Column -->
+<ng-container matColumnDef="ObjectName">
+  <mat-header-cell *matHeaderCellDef> Permissions</mat-header-cell>
+
+  <mat-cell *matCellDef="let element">
+
+    
+     
+   
+    <mat-icon matTooltip="View Permissions" 
+    style="color: #f58220;" (click)="open(content,element.UserID)">
+      visibility
+    <span style="display: none;">View Permissions</span>
+    </mat-icon>
+ 
+  </mat-cell>
+
+
+</ng-container>
+ <!-- Position Column -->
+ <ng-container matColumnDef="SefalasRoles">
+  <mat-header-cell *matHeaderCellDef>sefaLas Role</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.SefalasRoles}} </mat-cell>
+</ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!--page controls-->
+  <mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+
+
+  <div style="margin-top:40px; margin-bottom:20px;margin-left:17px">
+    <button  mat-raised-button color="primary" (click)="handleSignOut()" >Confirm Info</button>
+   
+  </div>
+   
+   
+</div>
+<!--popo modal-->
+
+<ng-template #content let-modal>
+	<div class="modal-header"  style="background-color: #f58220;">
+		<h4 class="modal-title" id="modal-basic-title" style="color: #e4e2e2;">User Permissions</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="background-color: #e4e2e2;"></button>
+	</div>
+	<div class="modal-body" >
+    <!--start modal-->
+    
+  <mat-table #table [dataSource]="dataSource2">
+
+   
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="UserFullName">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.UserFullName}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="ManagerFullName">
+      <mat-header-cell *matHeaderCellDef>Manager FullName</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ManagerFullName}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Email}} </mat-cell>
+    </ng-container>
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="Position">
+        <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Position}} </mat-cell>
+      </ng-container>
+<!-- Symbol Column -->
+<ng-container matColumnDef="ObjectName">
+  <mat-header-cell *matHeaderCellDef> Permissions</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.ObjectName}} </mat-cell>
+
+
+
+</ng-container>
+ <!-- Position Column -->
+ <ng-container matColumnDef="SefalasRoles">
+  <mat-header-cell *matHeaderCellDef>sefaLas Role</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.SefalasRoles}} </mat-cell>
+</ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+    
+
+    <!--end modal-->
+	</div>
+	<!-- <div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div> -->
+</ng-template>
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

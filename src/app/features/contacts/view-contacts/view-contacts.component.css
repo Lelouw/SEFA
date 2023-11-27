@@ -1,0 +1,47 @@
+table {
+  min-width: 1150px;
+  max-width: 100%;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+.mat-row:hover {
+  background-color: #E8EAF6;
+}
+
+
+
+/* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
