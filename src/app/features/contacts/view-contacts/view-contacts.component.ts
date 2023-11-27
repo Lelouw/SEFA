@@ -18,6 +18,7 @@ import { phoneTypes } from '../../../models/phone-type';
 import { Observable, of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationDialogModel } from '../../../ui/confirmation-dialog/confirmation-dialog';
 import { ConfirmationDialogComponent } from '../../../ui/confirmation-dialog/confirmation-dialog.component';
@@ -138,7 +139,32 @@ handleSignOut() {
     this.dataSource.filter = filterValue;
   }
 
+submit(){
 
+  Swal({
+    title: 'Are you sure?',
+    text: 'You will not be able to recover this imaginary file!',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, keep it'
+  }).then(function() {
+    Swal(
+      'Deleted!',
+      'Your imaginary file has been deleted.',
+      'success'
+    )
+  }, function(dismiss) {
+    // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
+    if (dismiss === 'cancel') {
+      Swal(
+        'Cancelled',
+        'Your imaginary file is safe :)',
+        'error'
+      )
+    }
+  })
+}
 }
 
 // export interface Element {

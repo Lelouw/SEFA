@@ -73,12 +73,29 @@
                  [showFirstLastButtons]="true">
   </mat-paginator>
 
+  <div class="col-lg-6">
+    <div class="form-group text-left">
+    <label class="d-block">
+    <input type="checkbox">
+    <span style="margin-left: 5px;">I Confirm the above sefaLas permissions are correct</span>
+    </label>
+    </div>
+    </div>
 
-  <div style="margin-top:40px; margin-bottom:20px;margin-left:17px">
+
+  <div class="row">
+    <div class="container">
+    <button class="btn btn-light" style="background-color: #004B98; color: #fff;" (click)="handleSignOut()">Submit</button>
+    <!-- Add space using margin or padding -->
+    <button class="btn btn-light" style="background-color: #004B98; color: #fff; margin-left: 10px;" (click)="modal.close('by: close icon')">Cancel</button>
+    </div>
+    </div>
+
+  <!-- <div style="margin-top:40px; margin-bottom:20px;margin-left:17px">
     <button  mat-raised-button color="primary" (click)="handleSignOut()" >Confirm Info</button>
    
   </div>
-   
+    -->
    
 </div>
 <!--popo modal-->
