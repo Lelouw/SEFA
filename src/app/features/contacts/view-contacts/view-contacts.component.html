@@ -11,7 +11,7 @@
 
 
 
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table [dataSource]="dataSourceList">
 
    
 
@@ -96,27 +96,27 @@
    
 
     <!-- Name Column -->
-    <ng-container matColumnDef="UserFullName">
+    <!-- <ng-container matColumnDef="UserFullName">
       <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.UserFullName}} </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="ManagerFullName">
+    <!-- <ng-container matColumnDef="ManagerFullName">
       <mat-header-cell *matHeaderCellDef>Manager FullName</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.ManagerFullName}} </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="Email">
+    <!-- <ng-container matColumnDef="Email">
       <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.Email}} </mat-cell>
-    </ng-container>
+    </ng-container> -->
        <!-- Symbol Column -->
-       <ng-container matColumnDef="Position">
+       <!-- <ng-container matColumnDef="Position">
         <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.Position}} </mat-cell>
-      </ng-container>
+      </ng-container> -->
 <!-- Symbol Column -->
 <ng-container matColumnDef="ObjectName">
   <mat-header-cell *matHeaderCellDef> Permissions</mat-header-cell>
@@ -131,8 +131,8 @@
   <mat-cell *matCellDef="let element"> {{element.SefalasRoles}} </mat-cell>
 </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-header-row *matHeaderRowDef="popColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: popColumns;"></mat-row>
   </mat-table>
     
 

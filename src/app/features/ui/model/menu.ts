@@ -17,11 +17,11 @@ export let menu: NavItem[] = [
         iconName: 'list',
         route: 'contacts/view-contacts'
       },
-      {
-        displayName: 'Add Users',
-        iconName: 'add_box',
-        route: 'contacts/add-contact'
-      }
+      // {
+      //   displayName: 'Add Users',
+      //   iconName: 'add_box',
+      //   route: 'contacts/add-contact'
+      // }
     ]
   },
   {
@@ -34,11 +34,11 @@ export let menu: NavItem[] = [
         iconName: 'list',
         route: 'accounts/view-accounts'
       },
-      {
-        displayName: 'Add Account',
-        iconName: 'add_box',
-        route: 'accounts/add-account'
-      }
+      // {
+      //   displayName: 'Add Account',
+      //   iconName: 'add_box',
+      //   route: 'accounts/add-account'
+      // }
     ]
   },
   {
@@ -58,45 +58,45 @@ export let menu: NavItem[] = [
       }
     ]
   },
-  {
-    displayName: 'Deals',
-    iconName: 'paid',
-    route: 'deals',
-    children: [
-      {
-        displayName: 'View Deals',
-        iconName: 'list',
-        route: 'deals/view-deals'
-      },
-      {
-        displayName: 'Add Deal',
-        iconName: 'add_box',
-        route: 'deals/add-deal'
-      }
-    ]
-  },
-  {
-    displayName: 'User',
-    iconName: 'face',
-    route: 'user',
-    children: [
-      {
-        displayName: 'Email',
-        iconName: 'markunread_mailbox',
-        route: 'user/email/inbox'
-      },
-      {
-        displayName: 'Account Info',
-        iconName: 'account_box',
-        route: 'user/account-info'
-      },
-      {
-        displayName: 'Profile Image',
-        iconName: 'image',
-        route: 'user/profile-image'
-      }
-    ]
-  },
+  // {
+  //   displayName: 'Deals',
+  //   iconName: 'paid',
+  //   route: 'deals',
+  //   children: [
+  //     {
+  //       displayName: 'View Deals',
+  //       iconName: 'list',
+  //       route: 'deals/view-deals'
+  //     },
+  //     {
+  //       displayName: 'Add Deal',
+  //       iconName: 'add_box',
+  //       route: 'deals/add-deal'
+  //     }
+  //   ]
+  // },
+  // {
+  //   displayName: 'User',
+  //   iconName: 'face',
+  //   route: 'user',
+  //   children: [
+  //     {
+  //       displayName: 'Email',
+  //       iconName: 'markunread_mailbox',
+  //       route: 'user/email/inbox'
+  //     },
+  //     {
+  //       displayName: 'Account Info',
+  //       iconName: 'account_box',
+  //       route: 'user/account-info'
+  //     },
+  //     {
+  //       displayName: 'Profile Image',
+  //       iconName: 'image',
+  //       route: 'user/profile-image'
+  //     }
+  //   ]
+  // },
   {
       displayName: 'Sign Out',
       iconName: 'highlight_off'
